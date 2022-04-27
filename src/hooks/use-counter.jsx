@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const useCounter = () => {
+const useCounter = (counterValue = 1) => {
 	const [counter, setCounter] = useState(0);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setCounter((prevCounter) => prevCounter + 1);
+			setCounter((prevCounter) => prevCounter + counterValue);
 		}, 1000);
 
 		return () => clearInterval(interval);
